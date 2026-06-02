@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>REPARACIONES FRIO-ELECTRO S.L. - Electricistas y Fontaneros en Madrid</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#001430',
+            'primary-container': '#002855',
+            'on-primary-container': '#7490c3',
+            secondary: '#fe6b00',
+            'secondary-dark': '#a04100',
+            surface: '#f9f9ff',
+            'surface-low': '#f1f3ff',
+            'surface-container': '#e9edff',
+            'on-surface': '#141b2b',
+            'on-surface-variant': '#43474f',
+            outline: '#747780',
+            'outline-variant': '#c4c6d0',
+          },
+          fontFamily: {
+            heading: ['Montserrat', 'sans-serif'],
+            body: ['Hanken Grotesk', 'sans-serif'],
+          },
+          maxWidth: { container: '1200px' },
+          boxShadow: {
+            card: '0 4px 20px rgba(0,20,48,0.08)',
+            'card-hover': '0 8px 30px rgba(0,20,48,0.14)',
+            nav: '0 2px 12px rgba(0,20,48,0.10)',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    *{box-sizing:border-box;}
+    body{font-family:'Hanken Grotesk',sans-serif;background:#f9f9ff;color:#141b2b;}
+    h1,h2,h3,h4{font-family:'Montserrat',sans-serif;}
+    .nav-link{position:relative;padding-bottom:2px;}
+    .nav-link.active::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:#fe6b00;border-radius:2px;}
+    .hero-bg{background:linear-gradient(135deg,#f9f9ff 0%,#e9edff 50%,#dce2f7 100%);position:relative;overflow:hidden;}
+    .hero-bg::after{content:'';position:absolute;right:-60px;top:-40px;width:480px;height:480px;border-radius:40% 60% 60% 40%/40% 40% 60% 60%;background:linear-gradient(135deg,rgba(65,95,143,0.12),rgba(0,20,48,0.06));pointer-events:none;}
+    .badge-pill{display:inline-flex;align-items:center;gap:6px;background:#fff3ea;color:#a04100;border:1px solid #fed0b0;border-radius:9999px;padding:4px 14px;font-size:12px;font-weight:600;}
+    .service-card{background:#fff;border:1px solid #e4e7f0;border-radius:8px;padding:28px 24px;transition:box-shadow .2s,transform .2s;}
+    .service-card:hover{box-shadow:0 8px 30px rgba(0,20,48,.14);transform:translateY(-2px);}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:#fe6b00;color:#fff;font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:15px;padding:14px 28px;border-radius:6px;border:none;cursor:pointer;transition:background .18s,transform .12s;text-decoration:none;}
+    .btn-primary:hover{background:#e05e00;transform:translateY(-1px);}
+    .btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#001430;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:15px;padding:13px 28px;border-radius:6px;border:1.5px solid #001430;cursor:pointer;transition:background .18s;text-decoration:none;}
+    .btn-ghost:hover{background:#e9edff;}
+    .btn-white{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#001430;font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:16px;padding:16px 36px;border-radius:6px;border:none;cursor:pointer;transition:background .18s;text-decoration:none;}
+    .btn-white:hover{background:#f1f3ff;}
+    input:focus,select:focus,textarea:focus{outline:none;border-color:#001430;box-shadow:0 0 0 3px rgba(0,20,48,.12);}
+    .zone-tag{border:1px solid #c4c6d0;border-radius:4px;padding:6px 14px;font-size:13px;font-weight:500;color:#43474f;background:#fff;white-space:nowrap;}
+    header{position:sticky;top:0;z-index:100;}
+    #mobile-menu{display:none;}
+    #mobile-menu.open{display:block;}
+    @media(max-width:768px){.hero-bg::after{display:none;}}
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="bg-white shadow-nav border-b border-gray-100">
+  <div class="max-w-container mx-auto px-4 md:px-16 flex items-center justify-between h-16">
+    <a href="#" class="flex items-center gap-2 shrink-0">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fe6b00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      <div>
+        <span class="font-heading font-bold text-sm text-primary leading-tight block" style="font-family:Montserrat,sans-serif;">REPARACIONES FRIO-ELECTRO</span>
+        <span class="font-heading font-bold text-sm text-primary leading-tight block" style="font-family:Montserrat,sans-serif;">S.L.</span>
+      </div>
+    </a>
+    <nav class="hidden md:flex items-center gap-7">
+      <a href="#" class="nav-link active font-semibold text-sm text-primary" style="font-family:Hanken Grotesk,sans-serif;">Inicio</a>
+      <a href="#servicios" class="nav-link text-sm text-gray-500 hover:text-primary transition-colors" style="font-family:Hanken Grotesk,sans-serif;">Servicios</a>
+      <a href="#zonas" class="nav-link text-sm text-gray-500 hover:text-primary transition-colors" style="font-family:Hanken Grotesk,sans-serif;">Zonas de actuación</a>
+      <a href="#contacto" class="nav-link text-sm text-gray-500 hover:text-primary transition-colors" style="font-family:Hanken Grotesk,sans-serif;">Contacto</a>
+    </nav>
+    <div class="hidden md:flex items-center gap-4">
+      <a href="tel:625651010" class="flex items-center gap-2 text-sm font-semibold text-primary" style="font-family:Hanken Grotesk,sans-serif;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fe6b00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.12 1.18 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+        625 651 010
+      </a>
+      <a href="#contacto" class="btn-primary" style="padding:10px 20px;font-size:13px;border-radius:4px;">Solicitar presupuesto gratis</a>
+    </div>
+    <button onclick="document.getElementById('mobile-menu').classList.toggle('open')" class="md:hidden p-2 text-primary">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-100 px-4 py-4 space-y-3">
+    <a href="#" class="block font-semibold text-sm text-primary py-2" style="font-family:Hanken Grotesk,sans-serif;">Inicio</a>
+    <a href="#servicios" class="block text-sm text-gray-500 py-2" style="font-family:Hanken Grotesk,sans-serif;">Servicios</a>
+    <a href="#zonas" class="block text-sm text-gray-500 py-2" style="font-family:Hanken Grotesk,sans-serif;">Zonas de actuación</a>
+    <a href="#contacto" class="block text-sm text-gray-500 py-2" style="font-family:Hanken Grotesk,sans-serif;">Contacto</a>
+    <a href="tel:625651010" class="btn-primary w-full justify-center mt-2" style="border-radius:4px;">Llamar ahora: 625 651 010</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero-bg py-20 md:py-28 px-4 md:px-16">
+  <div class="max-w-container mx-auto">
+    <div class="max-w-xl relative z-10">
+      <div class="badge-pill mb-6">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#a04100" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Respuesta en menos de 2 horas
+      </div>
+      <h1 style="font-family:Montserrat,sans-serif;font-weight:700;font-size:clamp(28px,5vw,44px);line-height:1.15;letter-spacing:-0.02em;color:#001430;margin-bottom:20px;">
+        Electricistas y fontaneros de confianza en Madrid – Disponibles hoy
+      </h1>
+      <p style="font-family:Hanken Grotesk,sans-serif;font-size:16px;color:#43474f;line-height:1.7;margin-bottom:32px;max-width:420px;">
+        Reparaciones urgentes, instalaciones y mantenimiento. Presupuesto gratuito sin compromiso.
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;">
+        <a href="tel:625651010" class="btn-primary">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.12 1.18 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+          Llámanos ahora: 625 651 010
+        </a>
+        <a href="#servicios" class="btn-ghost">Ver nuestros servicios</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAND -->
+<section style="background:#fff;border-top:1px solid #e4e7f0;border-bottom:1px solid #e4e7f0;padding:28px 16px;">
+  <div class="max-w-container mx-auto px-4 md:px-16">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:24px;text-align:center;">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fe6b00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <span style="font-family:Hanken Grotesk,sans-serif;font-weight:600;font-size:13px;color:#141b2b;">Más de 15 años de experiencia</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fe6b00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <span style="font-family:Hanken Grotesk,sans-serif;font-weight:600;font-size:13px;color:#141b2b;">Técnicos certificados</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fe6b00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        <span style="font-family:Hanken Grotesk,sans-serif;font-weight:600;font-size:13px;color:#141b2b;">Presupuesto gratuito</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fe6b00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span style="font-family:Hanken Grotesk,sans-serif;font-weight:600;font-size:13px;color:#141b2b;">Garantía en todos los trabajos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="servicios" style="padding:80px 16px;">
+  <div class="max-w-container mx-auto px-4 md:px-16">
+    <div style="text-align:center;margin-bottom:48px;">
+      <h2 style="font-family:Montserrat,sans-serif;font-weight:700;font-size:clamp(22px,4vw,32px);color:#001430;letter-spacing:-0.01em;margin-bottom:12px;">¿En qué podemos ayudarte?</h2>
+      <p style="font-family:Hanken Grotesk,sans-serif;font-size:16px;color:#43474f;max-width:480px;margin:0 auto;">Soluciones profesionales para hogar y empresa con la máxima garantía.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">
+
+      <div class="service-card">
+        <div style="margin-bottom:16px;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fe6b00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <h3 style="font-family:Montserrat,sans-serif;font-weight:600;font-size:18px;color:#001430;margin-bottom:8px;">Electricidad</h3>
+        <p style="font-family:Hanken Grotesk,sans-serif;font-size:14px;color:#43474f;line-height:1.6;margin-bottom:16px;">Solución rápida a apagones, cortocircuitos e instalaciones eléctricas completas.</p>
+        <a href="#contacto" style="font-family:Hanken Grotesk,sans-serif;font-weight:600;font-size:14px;color:#a04100;display:inline-flex;align-items:center;gap:4px;text-decoration:none;">Saber más <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+
+      <div class="service-card">
+        <div style="margin-bottom:16px;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fe6b00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6 2 2 7 2 12c0 2.4 1 5 2.5 7"/><path d="M12 2c6 0 10 5 10 10 0 2.4-1 5-2.5 7"/><path d="M12 12v10"/><path d="M8 16l4 4 4-4"/></svg>
+        </div>
+        <h3 style="font-family:Montserrat,sans-serif;font-weight:600;font-size:18px;color:#001430;margin-bottom:8px;">Fontanería</h3>
+        <p style="font-family:Hanken Grotesk,sans-serif;font-size:14px;color:#43474f;line-height:1.6;margin-bottom:16px;">Reparación de fugas, desatascos e instalación de sistemas de agua.</p>
+        <a href="#contacto" style="font-family:Hanken Grotesk,sans-serif;font-weight:600;font-size:14px;color:#a04100;display:inline-flex;align-items:center;gap:4px;text-decoration:none;">Saber más <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+
+      <div class="service-card">
+        <div style="margin-bottom:16px;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fe6b00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/><circle cx="12" cy="12" r="4"/></svg>
+        </div>
+        <h3 style="font-family:Montserrat,sans-serif;font-weight:600;font-size:18px;color:#001430;margin-bottom:8px;">Aire Acondicionado</h3>
+        <p style="font-family:Hanken Grotesk,sans-serif;font-size:14px;color:#43474f;line-height:1.6;margin-bottom:16px;">Instalación, mantenimiento y reparación de todas las marcas de climatización.</p>
+        <a href="#contacto" style="font-family:Hanken Grotesk,sans-serif;font-weight:600;font-size:14px;color:#a04100;display:inline-flex;align-items:center;gap:4px;text-decoration:none;">Saber más <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+
+      <div class="service-card">
+        <div style="margin-bottom:16px;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fe6b00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg>
+        </div>
+        <h3 style="font-family:Montserrat,sans-serif;font-weight:600;font-size:18px;color:#001430;margin-bottom:8px;">Calefacción</h3>
+        <p style="font-family:Hanken Grotesk,sans-serif;font-size:14px;color:#43474f;line-height:1.6;margin-bottom:16px;">Reparación de calderas, radiadores y sistemas de calefacción central.</p>
+        <a href="#contacto" style="font-family:Hanken Grotesk,sans-serif;font-weight:600;font-size:14px;color:#a04100;display:inline-flex;align-items:center;gap:4px;text-decoration:none;">Saber más <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+
+      <div class="service-card">
+        <div style="margin-bottom:16px;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fe6b00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3 style="font-family:Montserrat,sans-serif;font-weight:600;font-size:18px;color:#001430;margin-bottom:8px;">Suelo Radiante</h3>
+        <p style="font-family:Hanken Grotesk,sans-serif;font-size:14px;color:#43474f;line-height:1.6;margin-bottom:16px;">Especialistas en instalación y mantenimiento de sistemas de suelo radiante.</p>
+        <a href="#contacto" style="font-family:Hanken Grotesk,sans-serif;font-weight:600;font-size:14px;color:#a04100;display:inline-flex;align-items:center;gap:4px;text-decoration:none;">Saber más <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+
+      <div class="service-card">
+        <div style="margin-bottom:16px;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fe6b00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>
+        </div>
+        <h3 style="font-family:Montserrat,sans-serif;font-weight:600;font-size:18px;color:#001430;margin-bottom:8px;">Instalaciones de Gas</h3>
+        <p style="font-family:Hanken Grotesk,sans-serif;font-size:14px;color:#43474f;line-height:1.6;margin-bottom:16px;">Revisiones oficiales, certificados e instalaciones completas de gas.</p>
+        <a href="#contacto" style="font-family:Hanken Grotesk,sans-serif;font-weight:600;font-size:14px;color:#a04100;display:inline-flex;align-items:center;gap:4px;text-decoration:none;">Saber más <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- URGENCIAS -->
+<section style="background:#fe6b00;padding:64px 16px;text-align:center;">
+  <div class="max-w-container mx-auto px-4 md:px-16">
+    <h2 style="font-family:Montserrat,sans-serif;font-weight:700;font-size:clamp(22px,4vw,32px);color:#fff;letter-spacing:-0.01em;margin-bottom:12px;">¿Tienes una avería urgente?</h2>
+    <p style="font-family:Hanken Grotesk,sans-serif;font-size:16px;color:rgba(255,255,255,0.85);margin-bottom:32px;">Atendemos emergencias de electricidad y fontanería en Madrid.</p>
+    <a href="tel:625651010" class="btn-white">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fe6b00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.12 1.18 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+      Llamar ahora – 625 651 010
+    </a>
+  </div>
+</section>
+
+<!-- ZONES -->
+<section id="zonas" style="background:#fff;padding:80px 16px;">
+  <div class="max-w-container mx-auto px-4 md:px-16">
+    <div style="text-align:center;margin-bottom:40px;">
+      <h2 style="font-family:Montserrat,sans-serif;font-weight:700;font-size:clamp(22px,4vw,32px);color:#001430;letter-spacing:-0.01em;margin-bottom:12px;">Dónde trabajamos</h2>
+      <p style="font-family:Hanken Grotesk,sans-serif;font-size:16px;color:#43474f;max-width:480px;margin:0 auto;">Madrid y toda la Comunidad de Madrid. Nos desplazamos rápidamente a tu domicilio o empresa.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;">
+      <span class="zone-tag">Madrid Capital</span>
+      <span class="zone-tag">Alcobendas</span>
+      <span class="zone-tag">San Sebastián de los Reyes</span>
+      <span class="zone-tag">Pozuelo de Alarcón</span>
+      <span class="zone-tag">Majadahonda</span>
+      <span class="zone-tag">Las Rozas</span>
+      <span class="zone-tag">Getafe</span>
+      <span class="zone-tag">Leganés</span>
+      <span class="zone-tag">Alcorcón</span>
+      <span class="zone-tag">Móstoles</span>
+      <span class="zone-tag">Fuenlabrada</span>
+      <span class="zone-tag">Torrejón de Ardoz</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contacto" style="background:#f9f9ff;padding:80px 16px;">
+  <div class="max-w-container mx-auto px-4 md:px-16">
+    <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:start;" class="contact-grid">
+      <div>
+        <h2 style="font-family:Montserrat,sans-serif;font-weight:700;font-size:clamp(22px,4vw,32px);color:#001430;letter-spacing:-0.01em;margin-bottom:32px;">Contacto directo</h2>
+        <div style="display:flex;flex-direction:column;gap:24px;">
+          <div style="display:flex;gap:16px;align-items:flex-start;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fe6b00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.12 1.18 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+            <div>
+              <p style="font-family:Hanken Grotesk,sans-serif;font-weight:600;font-size:11px;color:#747780;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;">Teléfono (Urgencias 24h)</p>
+              <a href="tel:625651010" style="font-family:Montserrat,sans-serif;font-weight:700;font-size:20px;color:#001430;text-decoration:none;">625 651 010</a>
+            </div>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fe6b00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <div>
+              <p style="font-family:Hanken Grotesk,sans-serif;font-weight:600;font-size:11px;color:#747780;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;">Email</p>
+              <a href="mailto:sat@reparacionesfrioelectro22.com" style="font-family:Hanken Grotesk,sans-serif;font-size:15px;color:#001430;text-decoration:none;">sat@reparacionesfrioelectro22.com</a>
+            </div>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fe6b00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div>
+              <p style="font-family:Hanken Grotesk,sans-serif;font-weight:600;font-size:11px;color:#747780;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;">Horario de oficina</p>
+              <p style="font-family:Hanken Grotesk,sans-serif;font-size:15px;color:#001430;margin-bottom:4px;">Lun-Sáb 8:00-20:00</p>
+              <p style="font-family:Hanken Grotesk,sans-serif;font-weight:700;font-size:13px;color:#a04100;">URGENCIAS 24 HORAS</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:#fff;border-radius:8px;padding:36px;box-shadow:0 4px 20px rgba(0,20,48,.08);border:1px solid #e4e7f0;">
+        <h3 style="font-family:Montserrat,sans-serif;font-weight:600;font-size:20px;color:#001430;margin-bottom:24px;">Solicita tu presupuesto gratuito</h3>
+        <form onsubmit="handleSubmit(event)" style="display:flex;flex-direction:column;gap:18px;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div>
+              <label style="display:block;font-family:Hanken Grotesk,sans-serif;font-weight:600;font-size:12px;color:#43474f;margin-bottom:6px;">Nombre</label>
+              <input type="text" placeholder="Tu nombre" style="width:100%;border:1px solid #c4c6d0;border-radius:4px;padding:11px 14px;font-family:Hanken Grotesk,sans-serif;font-size:14px;color:#141b2b;" required/>
+            </div>
+            <div>
+              <label style="display:block;font-family:Hanken Grotesk,sans-serif;font-weight:600;font-size:12px;color:#43474f;margin-bottom:6px;">Teléfono</label>
+              <input type="tel" placeholder="Tu número" style="width:100%;border:1px solid #c4c6d0;border-radius:4px;padding:11px 14px;font-family:Hanken Grotesk,sans-serif;font-size:14px;color:#141b2b;" required/>
+            </div>
+          </div>
+          <div>
+            <label style="display:block;font-family:Hanken Grotesk,sans-serif;font-weight:600;font-size:12px;color:#43474f;margin-bottom:6px;">Tipo de servicio</label>
+            <select style="width:100%;border:1px solid #c4c6d0;border-radius:4px;padding:11px 14px;font-family:Hanken Grotesk,sans-serif;font-size:14px;color:#141b2b;background:#fff;appearance:none;background-image:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23747780%22 stroke-width=%222%22><polyline points=%226 9 12 15 18 9%22/></svg>');background-repeat:no-repeat;background-position:right 12px center;">
+              <option>Electricidad</option>
+              <option>Fontanería</option>
+              <option>Aire Acondicionado</option>
+              <option>Calefacción</option>
+              <option>Suelo Radiante</option>
+              <option>Instalaciones de Gas</option>
+            </select>
+          </div>
+          <div>
+            <label style="display:block;font-family:Hanken Grotesk,sans-serif;font-weight:600;font-size:12px;color:#43474f;margin-bottom:6px;">Descripción breve</label>
+            <textarea placeholder="Cuéntanos qué necesitas..." rows="4" style="width:100%;border:1px solid #c4c6d0;border-radius:4px;padding:11px 14px;font-family:Hanken Grotesk,sans-serif;font-size:14px;color:#141b2b;resize:none;"></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%;justify-content:center;border-radius:6px;">
+            Quiero mi presupuesto gratis
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </form>
+        <div id="form-success" style="display:none;margin-top:16px;padding:14px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;font-family:Hanken Grotesk,sans-serif;font-size:14px;color:#166534;text-align:center;">
+          ✓ ¡Solicitud enviada! Te contactaremos en menos de 2 horas.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#001430;padding:40px 16px;">
+  <div class="max-w-container mx-auto px-4 md:px-16">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px;margin-bottom:24px;">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fe6b00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        <span style="font-family:Montserrat,sans-serif;font-weight:700;font-size:14px;color:#fff;">REPARACIONES FRIO-ELECTRO S.L.</span>
+      </div>
+      <nav style="display:flex;flex-wrap:wrap;gap:24px;">
+        <a href="#" style="font-family:Hanken Grotesk,sans-serif;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;transition:color .18s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Aviso Legal</a>
+        <a href="#" style="font-family:Hanken Grotesk,sans-serif;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Política de Privacidad</a>
+        <a href="#" style="font-family:Hanken Grotesk,sans-serif;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Política de Cookies</a>
+        <a href="#" style="font-family:Hanken Grotesk,sans-serif;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Mapa del Web</a>
+      </nav>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.1);padding-top:24px;text-align:center;">
+      <p style="font-family:Hanken Grotesk,sans-serif;font-size:12px;color:rgba(255,255,255,.3);">© 2024 REPARACIONES FRIO-ELECTRO S.L. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+@media(max-width:768px){
+  .contact-grid{grid-template-columns:1fr!important;}
+}
+</style>
+
+<script>
+function handleSubmit(e){
+  e.preventDefault();
+  var s=document.getElementById('form-success');
+  s.style.display='block';
+  e.target.reset();
+  setTimeout(function(){s.style.display='none';},5000);
+}
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
+  });
+});
+document.querySelectorAll('#mobile-menu a').forEach(function(a){
+  a.addEventListener('click',function(){document.getElementById('mobile-menu').classList.remove('open');});
+});
+</script>
+</body>
+</html>
